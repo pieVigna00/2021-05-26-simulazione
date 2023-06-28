@@ -130,5 +130,11 @@ public class Business {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return businessName + "";
+	}
+	
+
 	
 }

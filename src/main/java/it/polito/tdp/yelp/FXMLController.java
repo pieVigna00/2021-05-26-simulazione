@@ -7,6 +7,7 @@ package it.polito.tdp.yelp;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import it.polito.tdp.yelp.model.Business;
 import it.polito.tdp.yelp.model.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,13 +36,13 @@ public class FXMLController {
     private Button btnPercorso; // Value injected by FXMLLoader
 
     @FXML // fx:id="cmbCitta"
-    private ComboBox<?> cmbCitta; // Value injected by FXMLLoader
+    private ComboBox<String> cmbCitta; // Value injected by FXMLLoader
 
     @FXML // fx:id="txtX"
     private TextField txtX; // Value injected by FXMLLoader
 
     @FXML // fx:id="cmbAnno"
-    private ComboBox<?> cmbAnno; // Value injected by FXMLLoader
+    private ComboBox<Integer> cmbAnno; // Value injected by FXMLLoader
 
     @FXML // fx:id="cmbLocale"
     private ComboBox<?> cmbLocale; // Value injected by FXMLLoader
@@ -56,12 +57,24 @@ public class FXMLController {
 
     @FXML
     void doCreaGrafo(ActionEvent event) {
-
+    	try {
+    	String citta=this.cmbCitta.getValue();
+    	int anno=this.cmbAnno.getValue();
+    	this.model.buildGraph(citta, anno);
+    	txtResult.setText("Grafo creato con successo \n");
+    	txtResult.appendText("Vertici : "+this.model.getNumVertici()+"\n");
+    	txtResult.appendText("Archi : "+this.model.getNumArchi()+"\n");
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    		txtResult.setText("Devi selezionare una città e un anno tramite menu a tendina");
+    	}
+    	
     }
 
     @FXML
     void doLocaleMigliore(ActionEvent event) {
-
+    	Business migliore= model.getMigliore();
+    	txtResult.appendText("Il locale migliore è "+migliore);
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -78,5 +91,9 @@ public class FXMLController {
     
     public void setModel(Model model) {
     	this.model = model;
+    	for(int i=2005; i<2014; i++) {
+        	this.cmbAnno.getItems().add(i);
+        }
+    	this.cmbCitta.getItems().addAll(this.model.getAllCity());
     }
 }

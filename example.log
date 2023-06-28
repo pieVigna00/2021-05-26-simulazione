@@ -10,3 +10,52 @@ INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
 INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 INFO main com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+ERROR JavaFX Application Thread com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLInvalidAuthorizationSpecException: Could not connect to address=(host=localhost)(port=3306)(type=master) : Access denied for user 'root'@'localhost' (using password: YES)
+Current charset is UTF-8. If password has been set using other charset, consider using option 'passwordCharacterEncoding'
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionMapper.get(ExceptionMapper.java:239)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1243)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:622)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:142)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:86)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at it.polito.tdp.yelp.db.DBConnect.getConnection(DBConnect.java:27)
+	at it.polito.tdp.yelp.db.YelpDao.getAllBusiness(YelpDao.java:45)
+	at it.polito.tdp.yelp.model.Model.<init>(Model.java:21)
+	at it.polito.tdp.yelp.EntryPoint.start(EntryPoint.java:18)
+	at com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$9(LauncherImpl.java:846)
+	at com.sun.javafx.application.PlatformImpl.lambda$runAndWait$12(PlatformImpl.java:455)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:428)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:427)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:96)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:174)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+Current charset is UTF-8. If password has been set using other charset, consider using option 'passwordCharacterEncoding'
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:726)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:507)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1238)
+	... 23 more
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+INFO JavaFX Application Thread com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
